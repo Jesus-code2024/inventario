@@ -1,0 +1,14 @@
+<!-- inventario/templates/inventario/producto_detail.html -->
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>{{ producto.nombre }}</h1>
+  <p>{{ producto.descripcion }}</p>
+  <p>Cantidad: {{ producto.cantidad }}</p>
+  <p>Precio: ${{ producto.precio }}</p>
+  <p>Categoría: {{ producto.categoria.nombre }}</p>
+  <p>Proveedor: {{ producto.proveedor.nombre }}</p>
+  <a href="{% url 'producto-update' producto.pk %}">Editar</a> |
+  <a href="{% url 'producto-delete' producto.pk %}">Eliminar</a> |
+  <a href="{% url 'producto-list' %}">Volver a la lista</a>
+{% endblock %}

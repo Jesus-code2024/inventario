@@ -1,0 +1,1 @@
+Se creo un aplicaciond de inventario con 4 cruds 

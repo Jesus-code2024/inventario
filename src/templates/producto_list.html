@@ -1,0 +1,16 @@
+<!-- inventario/templates/inventario/producto_list.html -->
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>Productos</h1>
+  <ul>
+    {% for producto in productos %}
+      <li>
+        <a href="{% url 'producto-detail' producto.pk %}">{{ producto.nombre }}</a> |
+        <a href="{% url 'producto-update' producto.pk %}">Editar</a> |
+        <a href="{% url 'producto-delete' producto.pk %}">Eliminar</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'producto-create' %}">Nuevo Producto</a>
+{% endblock %}
